@@ -32,15 +32,15 @@ jobs:
       - name: Initialize the LineageOS source repository
         run: |
           cd ~/android/lineage
-          repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1 
+          repo init -u https://github.com/LineageOS/android.git -b lineage-17.1 
           repo sync
 
       - name: Prepare the device-specific code
         run: |
           cd ~/android/lineage
-          #git clone https://github.com/flydrz/android_device_oppo_PBEM00 -b dummy_lineage-17.1
+          git clone https://github.com/meleksaidani1/android_device_samsung_a10sS
+          git clone https://github.com/nnhra/android_vendor_samsung_a10s
           source build/envsetup.sh
-          breakfast Z00A
       
       - name: Start the build
         run: |
